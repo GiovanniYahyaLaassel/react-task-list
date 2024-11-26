@@ -38,7 +38,15 @@ function App() {
           </ul>
 
           {/* lista dei task completati */}
-          <h2>Compl</h2>
+          <h2>Completed Tasks ({compltedTasks.length})</h2>
+
+          <ul>
+            {compltedTasks.map((task) => (
+              <li key={task.id}>
+                <strong>{task.title}</strong> - Priority: {task.priority}, Est. time: {task.estimatedTime}
+              </li>
+            ))}
+          </ul>
         </div>
       </>
     )
