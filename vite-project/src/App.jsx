@@ -12,9 +12,17 @@ function App() {
       return task.state === 'backlog' || task.state === 'in_progress';
     });
 
-    console.log('task filtrati:', currentTask);
+    // console.log('task filtrati:', currentTask);
 
     // filtro i task complted 
+
+    const compltedTasks = tasks.filter((task) => {
+      // console.log('task completato', task);
+
+      return task.state === 'completed';
+    });
+
+    console.log('Completato:',compltedTasks);
     }
 
 export default App;
