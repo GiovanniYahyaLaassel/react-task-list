@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import  tasks  from './data/tasks';
 import './App.css'
 
+// filtro i task richiesti 
+
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div></div>
-    </>
-  )
-}
+    const currentTask = tasks.filter((task) => {
+      // console.log('Hello task:', task); 
+      return task.state === 'backlog' || task.state === 'in_progress';
+    });
 
-export default App
+    console.log('task filtrati:', currentTask);
+
+    // filtro i task complted 
+    }
+
+export default App;
